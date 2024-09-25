@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { BellIcon, SearchIcon } from "lucide-react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,6 +29,25 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="bg-[rgb(1,99,59)] text-white p-4 flex justify-between items-center">
+          <div className="flex items-center space-x-4">
+            <span className="text-2xl font-bold">UMES</span>
+            {/* <span className="text-xl">GPI</span> */}
+          </div>
+          <nav className="hidden md:flex space-x-4">
+            {/* <span>Planes</span> */}
+            {/* <span>Reportes</span> */}
+            <span>Seguimiento</span>
+          </nav>
+          <div className="flex items-center space-x-4">
+            <SearchIcon className="h-5 w-5" />
+            <BellIcon className="h-5 w-5" />
+            <div className="flex items-center space-x-2">
+              <img src="/placeholder.svg" alt="User" className="h-8 w-8 rounded-full" />
+              <span>Richard Mazariegos</span>
+            </div>
+          </div>
+        </header>
         {children}
       </body>
     </html>
